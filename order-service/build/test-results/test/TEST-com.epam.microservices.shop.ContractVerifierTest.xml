@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.epam.microservices.shop.ContractVerifierTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-09-17T09:05:53" hostname="MacBook-Pro-Uladzislau.local" time="0.547">
+  <properties/>
+  <testcase name="validate_shouldReturnOrderDetails" classname="com.epam.microservices.shop.ContractVerifierTest" time="0.547"/>
+  <system-out><![CDATA[2020-09-17 12:05:51.579  INFO 8100 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.epam.microservices.shop.ContractVerifierTest], using SpringBootContextLoader
+2020-09-17 12:05:51.580  INFO 8100 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.epam.microservices.shop.ContractVerifierTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-09-17 12:05:51.584  INFO 8100 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.cloud.contract.stubrunner.provider.wiremock.StubRunnerWireMockTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-09-17 12:05:51.585  INFO 8100 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@b3c7225, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@56b338bb, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@162a5fa8, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7a73e7bb, org.springframework.test.context.support.DirtiesContextTestExecutionListener@12b60f8a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5d8f8b87, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@199c5881, org.springframework.test.context.event.EventPublishingTestExecutionListener@7cb72a36, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5e5fb075, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@7f2ddb8a, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@48eccbe, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@41adb083, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@62d26cdb, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@73b21a80, org.springframework.cloud.contract.stubrunner.provider.wiremock.StubRunnerWireMockTestExecutionListener@12bd374]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.3.3.RELEASE)
+
+2020-09-17 12:05:51.614  INFO 8100 --- [    Test worker] c.e.m.shop.ContractVerifierTest          : Starting ContractVerifierTest on MacBook-Pro-Uladzislau.local with PID 8100 (started by vladmoss in /Users/vladmoss/Desktop/microservices/order-service)
+2020-09-17 12:05:51.615  INFO 8100 --- [    Test worker] c.e.m.shop.ContractVerifierTest          : No active profile set, falling back to default profiles: default
+2020-09-17 12:05:51.902  INFO 8100 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-09-17 12:05:51.927  INFO 8100 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24ms. Found 3 JPA repository interfaces.
+2020-09-17 12:05:52.174  INFO 8100 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-17 12:05:52.198  INFO 8100 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-09-17 12:05:52.205  INFO 8100 --- [         task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-09-17 12:05:52.206  INFO 8100 --- [         task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2020-09-17 12:05:52.206  INFO 8100 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+Hibernate: drop table if exists logistical_order CASCADE 
+Hibernate: drop table if exists logistical_order_line CASCADE 
+Hibernate: drop table if exists payment CASCADE 
+Hibernate: create table logistical_order (id bigint generated by default as identity, created timestamp, delivery_address varchar(255), external_customer_id bigint, external_shop_id bigint, logic_status varchar(255), modified timestamp, order_completion_date timestamp, order_delivery_date timestamp, order_identifier varchar(255), total_amount decimal(19,2), primary key (id))
+Hibernate: create table logistical_order_line (id bigint generated by default as identity, price decimal(19,2), product_sku varchar(255), quantity integer, logistical_order_id bigint, primary key (id))
+Hibernate: create table payment (id bigint generated by default as identity, created timestamp, external_payment_id bigint, modified timestamp, status varchar(255), transaction_id varchar(255), logistical_order_id bigint, primary key (id))
+Hibernate: alter table logistical_order_line add constraint FKddyakllcpal0jp1f96l9goi6l foreign key (logistical_order_id) references logistical_order
+Hibernate: alter table payment add constraint FK1tgpdn1kpqeely2bpvxrpcmsf foreign key (logistical_order_id) references logistical_order
+2020-09-17 12:05:52.330  INFO 8100 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-09-17 12:05:52.331  INFO 8100 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-17 12:05:53.037  WARN 8100 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-17 12:05:53.504  INFO 8100 --- [    Test worker] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-09-17 12:05:53.640  INFO 8100 --- [    Test worker] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-09-17 12:05:53.645  INFO 8100 --- [    Test worker] c.e.m.shop.ContractVerifierTest          : Started ContractVerifierTest in 2.058 seconds (JVM running for 9.822)
+2020-09-17 12:05:53.945  INFO 8100 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2020-09-17 12:05:53.945  INFO 8100 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-09-17 12:05:53.946  INFO 8100 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

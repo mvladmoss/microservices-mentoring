@@ -1,0 +1,26 @@
+server:
+  port: 8089
+
+spring:
+  datasource:
+    url: jdbc:postgresql://kafka-docker:5432/customer_serivce
+    username: admin
+    password: No4Nooxip4qu
+    driver_class_name: org.postgresql.Driver
+
+rabbitmq:
+  default:
+    exchange: orderShopExchange
+  queues:
+    outbound:
+      customerVerifiedQueue:
+        name: customer_verified_queue
+        routing-key: customer_verified_queue
+    inbound:
+      customerVerificationQueue: customer_verification_queue
+
+hibernate:
+  dialect: org.hibernate.dialect.PostgreSQL94Dialect
+  format-sql: true
+  show-sql: true
+  naming-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy

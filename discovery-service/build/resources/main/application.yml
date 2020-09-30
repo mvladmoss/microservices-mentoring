@@ -1,0 +1,9 @@
+server:
+  port: 8761
+
+eureka:
+  server:
+    maxThreadsForPeerReplication: 0
+  client:
+    register-with-eureka: false
+    fetch-registry: false

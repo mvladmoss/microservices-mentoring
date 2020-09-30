@@ -1,0 +1,35 @@
+server:
+  port: 8092
+
+
+spring:
+  datasource:
+    url: jdbc:postgresql://kafka-docker:5432/shop_service
+    username: admin
+    password: No4Nooxip4qu
+    driver_class_name: org.postgresql.Driver
+
+rabbitmq:
+  default:
+    exchange: orderShopExchange
+    fanout-exchange: shopFanoutExchange
+  queues:
+    outbound:
+      shopCatalogVerifiedQueue:
+        name: shop_catalog_verified_queue
+        routing-key: shop_catalog_verified_queue
+      orderPreparedQueue:
+        name: order_prepared_queue
+        routing-key: order_prepared_queue
+      orderReadyForDeliveryQueue:
+        name: order_ready_for_delivery_queue
+        routing-key: order_ready_for_delivery_queue
+    inbound:
+      orderCreatedQueue: order_created_queue
+      orderVerifiedQueue: order_verified_queue
+
+hibernate:
+  dialect: org.hibernate.dialect.PostgreSQL94Dialect
+  format-sql: true
+  show-sql: true
+  naming-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy

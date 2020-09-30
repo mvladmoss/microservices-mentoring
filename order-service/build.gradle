@@ -1,0 +1,85 @@
+buildscript {
+    ext {
+        springBootVersion = '2.2.1.RELEASE'
+        verifierVersion = '2.1.1.RELEASE'
+    }
+    repositories { mavenCentral() }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath "org.springframework.cloud:spring-cloud-contract-gradle-plugin:${verifierVersion}"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'spring-cloud-contract'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+sourceCompatibility = 1.8
+
+
+ext {
+    set('springCloudVersion', "Hoxton.SR1")
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
+    jcenter()
+}
+
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: '2.3.2.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.3.2.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.3.3.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-amqp', version: '2.3.3.RELEASE'
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.7.4"
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.3.2.RELEASE'
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.14'
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
+    annotationProcessor 'org.projectlombok:lombok:1.18.8'
+    compile "gradle.plugin.org.springframework.cloud:spring-cloud-contract-gradle-plugin:2.2.4.RELEASE"
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-contract-verifier', version: '2.2.4.RELEASE'
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+    implementation 'org.springframework.cloud:spring-cloud-starter-config'
+
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.3.2.RELEASE'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
+    testCompile group: 'com.h2database', name: 'h2', version: '1.4.200'
+    testCompile group: 'org.testcontainers', name: 'testcontainers', version: '1.14.3'
+    testCompile group: 'org.awaitility', name: 'awaitility', version: '4.0.3'
+    testCompile group: 'org.testcontainers', name: 'junit-jupiter', version: '1.14.3'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.8'
+
+    testCompile group: 'io.cucumber', name: 'cucumber-core', version: '6.7.0'
+    testCompile group: 'io.cucumber', name: 'cucumber-java', version: '6.7.0'
+    testCompile group: 'io.cucumber', name: 'cucumber-junit', version: '6.7.0'
+    testCompile group: 'io.cucumber', name: 'cucumber-spring', version: '6.7.0'
+
+}
+
+contracts {
+    packageWithBaseClasses = 'com.epam.microservices.shop'
+    baseClassMappings {
+        baseClassMapping(".*shop.*", "shop.BaseTestClass")
+    }
+}
+
+
+jar {
+    manifest {
+        attributes "Main-Class": "com.epam.microservices.shop.ApplicationInitializer"
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}

@@ -1,0 +1,19 @@
+server:
+  port: 8889
+
+spring:
+  application:
+    name: configuration-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+#      defaultZone: http://${discovery.instance.hostname}:${discovery.instance.port}/eureka/
+      defaultZone: http://localhost:8761/eureka/

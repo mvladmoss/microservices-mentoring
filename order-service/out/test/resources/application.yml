@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: Spring Boot Rest API
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: "jdbc:h2:mem:test-api;INIT=CREATE SCHEMA IF NOT EXISTS dbo\\;CREATE SCHEMA IF NOT EXISTS definitions;DATABASE_TO_UPPER=false;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false;MODE=MSSQLServer"
+    password: admin
+    username: admin
+    initialization-mode: never
+    hikari:
+      schema: dbo
+  jpa:
+    database: H2
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  test:
+    database:
+      replace: none
+
+rabbitmq:
+  default:
+    exchange: orderShopTopicExchange
+    fanout-exchange: orderShopFanoutExchange
+  queues:
+    outbound:
+      orderCreatedQueue:
+        name: order_created_queue
+      customerVerificationQueue:
+        name: customer_verification_queue
+      creditCardAuthorizationQueue:
+        name: credit_card_authorization_queue
+        routing-key: credit_card_authorization_queue
+      orderVerifiedQueue:
+        name: order_verified_queue
+        routing-key: order_verified_queue
+    inbound:
+      shopCatalogVerifiedQueue: shop_catalog_verified_queue
+      customerVerifiedQueue: customer_verified_queue
+      creditCardAuthorizedQueue: credit_card_authorized_queue
+      orderPreparedQueue: order_prepared_queue

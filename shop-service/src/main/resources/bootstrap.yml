@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: shop-service
+  cloud:
+    config:
+      uri: http://${configuration.instance.hostname}:${configuration.instance.port}
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${discovery.instance.hostname}:${discovery.instance.port}/eureka/

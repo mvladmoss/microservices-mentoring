@@ -1,0 +1,108 @@
+version: '3'
+services:
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  discovery-service:
+    build:
+      context: discovery-service
+    ports:
+      - "${DISCOVERY_SERVER_PORT}:${DISCOVERY_SERVER_PORT}"
+    environment:
+      - DISCOVERY_SERVER_PORT=${DISCOVERY_SERVER_PORT}
+  configuration-service:
+    build:
+      context: configuration-service
+    ports:
+      - "${CONFIGURATION_SERVER_PORT}:${CONFIGURATION_SERVER_PORT}"
+    environment:
+      - DISCOVERY_SERVER_HOST=discovery-service
+      - DISCOVERY_SERVER_PORT=${DISCOVERY_SERVER_PORT}
+      - CONFIGURATION_SERVER_PORT=${CONFIGURATION_SERVER_PORT}
+      - CONFIG_URI=${CONFIG_URI}
+
+  order_service_db:
+    image: postgres:9.6
+    container_name: order_service_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./order-service/db/ddl.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - POSTGRES_PASSWORD=${ORDER_SERVICE_DATABASE_PASSWORD}
+      - POSTGRES_USER=${ORDER_SERVICE_DATABASE_USERNAME}
+      - POSTGRES_DB=${ORDER_SERVICE_DB}
+  order-service:
+    build:
+      context: order-service
+    ports:
+      - "8081:8081"
+    environment:
+      - DISCOVERY_SERVER_HOST=discovery-service
+      - DISCOVERY_SERVER_PORT=${DISCOVERY_SERVER_PORT}
+      - CONFIGURATION_SERVER_HOST=configuration-service
+      - CONFIGURATION_SERVER_PORT=${CONFIGURATION_SERVER_PORT}
+      - ORDER_SERVICE_DB_URL=${ORDER_SERVICE_DB_URL}
+      - ORDER_SERVICE_DATABASE_USERNAME=${ORDER_SERVICE_DATABASE_USERNAME}
+      - ORDER_SERVICE_DATABASE_PASSWORD=${ORDER_SERVICE_DATABASE_PASSWORD}
+      - WAIT_HOSTS=order_service_db:5432,rabbitmq:5672,configuration-service:${CONFIGURATION_SERVER_PORT}
+      - WAIT_HOSTS_TIMEOUT=120
+
+  shop_service_db:
+    image: postgres:9.6
+    container_name: shop_service_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./shop-service/db/ddl.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - POSTGRES_PASSWORD=${SHOP_SERVICE_DATABASE_PASSWORD}
+      - POSTGRES_USER=${SHOP_SERVICE_DATABASE_USERNAME}
+      - POSTGRES_DB=${SHOP_SERVICE_DB}
+#  shop-service:
+#    build:
+#      context: shop-service
+#    ports:
+#      - "8082:8082"
+#    environment:
+#      - DISCOVERY_SERVER_HOST=discovery-service
+#      - DISCOVERY_SERVER_PORT=${DISCOVERY_SERVER_PORT}
+#      - CONFIGURATION_SERVER_HOST=configuration-service
+#      - CONFIGURATION_SERVER_PORT=${CONFIGURATION_SERVER_PORT}
+#      - SHOP_SERVICE_DB_URL=${SHOP_SERVICE_DB_URL}
+#      - SHOP_SERVICE_DATABASE_USERNAME=${SHOP_SERVICE_DATABASE_USERNAME}
+#      - SHOP_SERVICE_DATABASE_PASSWORD=${SHOP_SERVICE_DATABASE_PASSWORD}
+#      - WAIT_HOSTS=shop_service_db:5432,rabbitmq:5672,configuration-service:${CONFIGURATION_SERVER_PORT}
+#      - WAIT_HOSTS_TIMEOUT=120
+
+  customer_service_db:
+    image: postgres:9.6
+    container_name: customer_service_db
+    ports:
+      - "5434:5432"
+    volumes:
+      - ./customer-service/db/ddl.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - POSTGRES_PASSWORD=${CUSTOMER_SERVICE_DATABASE_PASSWORD}
+      - POSTGRES_USER=${CUSTOMER_SERVICE_DATABASE_USERNAME}
+      - POSTGRES_DB=${CUSTOMER_SERVICE_DB}
+  customer-service:
+    build:
+      context: customer-service
+    ports:
+      - "8083:8083"
+    environment:
+      - DISCOVERY_SERVER_HOST=discovery-service
+      - DISCOVERY_SERVER_PORT=${DISCOVERY_SERVER_PORT}
+      - CONFIGURATION_SERVER_HOST=configuration-service
+      - CONFIGURATION_SERVER_PORT=${CONFIGURATION_SERVER_PORT}
+      - CUSTOMER_SERVICE_DB_URL=${CUSTOMER_SERVICE_DB_URL}
+      - CUSTOMER_SERVICE_DATABASE_USERNAME=${CUSTOMER_SERVICE_DATABASE_USERNAME}
+      - CUSTOMER_SERVICE_DATABASE_PASSWORD=${CUSTOMER_SERVICE_DATABASE_PASSWORD}
+      - WAIT_HOSTS=customer_service_db:5432,rabbitmq:5672,configuration-service:${CONFIGURATION_SERVER_PORT}
+
+
+

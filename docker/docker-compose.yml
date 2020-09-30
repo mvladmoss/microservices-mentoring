@@ -1,0 +1,32 @@
+version: '3'
+services:
+#  rabbitmq:
+#    image: rabbitmq:management
+#    ports:
+#      - "5672:5672"
+#      - "15672:15672"
+  postresql:
+    image: postgres:9.6
+    container_name: order_service_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./order-service/db/ddl.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - POSTGRES_PASSWORD=No4Nooxip4qu
+      - POSTGRES_USER=${ORDER_SERVICE_DATABASE_USERNAME}
+      - POSTGRES_DB=${ORDER_SERVICE_DB}
+#  order-service:
+#    build:
+#      context: .
+#      dockerfile: ./order-service/Dockerfile
+#    ports:
+#      - "8081:8081"
+#    environment:
+#      - ORDER_SERVICE_DB_URL=${ORDER_SERVICE_DB_URL}
+#      - ORDER_SERVICE_DATABASE_USERNAME=${ORDER_SERVICE_DATABASE_USERNAME}
+#      - ORDER_SERVICE_DATABASE_PASSWORD=${ORDER_SERVICE_DATABASE_PASSWORD}
+#      - WAIT_HOSTS=postresql:5432,rabbitmq:5672
+
+
+

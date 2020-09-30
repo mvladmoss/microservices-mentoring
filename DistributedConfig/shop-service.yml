@@ -1,0 +1,21 @@
+server:
+  port: 8082
+
+rabbitmq:
+  default:
+    exchange: orderShopExchange
+    fanout-exchange: shopFanoutExchange
+  queues:
+    outbound:
+      shopCatalogVerifiedQueue:
+        name: shop_catalog_verified_queue
+        routing-key: shop_catalog_verified_queue
+      orderPreparedQueue:
+        name: order_prepared_queue
+        routing-key: order_prepared_queue
+      orderReadyForDeliveryQueue:
+        name: order_ready_for_delivery_queue
+        routing-key: order_ready_for_delivery_queue
+    inbound:
+      orderCreatedQueue: order_created_queue
+      orderVerifiedQueue: order_verified_queue

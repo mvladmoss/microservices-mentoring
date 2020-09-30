@@ -1,0 +1,13 @@
+{
+  "id" : "e9ac5564-d9f7-4030-9f8d-b451b20c5c49",
+  "request" : {
+    "url" : "/orders/1",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"totalAmount\":10,\"deliveryAddress\":\"address\",\"externalShopId\":1,\"orderStatus\":\"WAITING_VERIFICATION\",\"orderIdentifier\":\"1\"}",
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "e9ac5564-d9f7-4030-9f8d-b451b20c5c49"
+}

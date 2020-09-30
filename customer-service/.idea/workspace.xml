@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1bcb545a-0f41-4fa0-b0df-43861d6e07a6" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="customer-service" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="customer-service" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="customer-service" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1fuBFOryd4t1gP7hvdPlFJQg3s2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.epam.microservices.shop.rabbitmq.model" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/epam/microservices/shop/util" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.customer-service [build]">
+    <configuration name="ApplicationInitializer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.epam.microservices.shop.ApplicationInitializer" />
+      <module name="customer-service.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.epam.microservices.shop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="customer-service [bootJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="bootJar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="customer-service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.customer-service [build]" />
+        <item itemvalue="Gradle.customer-service [bootJar]" />
+        <item itemvalue="Application.ApplicationInitializer" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1bcb545a-0f41-4fa0-b0df-43861d6e07a6" name="Default Changelist" comment="" />
+      <created>1597057993700</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1597057993700</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="453" y="260" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599339642688">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="453" y="260" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1599339642688" />
+    <state x="533" y="166" key="#com.intellij.ide.util.MemberChooser" timestamp="1600612843330">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="533" y="166" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1600612843330" />
+    <state x="464" y="316" width="512" height="276" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1599401485125">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="464" y="316" width="512" height="276" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1440.900@0.0.1440.900" timestamp="1599401485125" />
+    <state x="245" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1599406229305">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="245" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1599406229305" />
+    <state x="483" y="160" key="#xdebugger.evaluate" timestamp="1599422549748">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="483" y="160" key="#xdebugger.evaluate/0.0.1440.900@0.0.1440.900" timestamp="1599422549748" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1601279207061">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1601279207061" />
+    <state width="1398" height="303" key="GridCell.Tab.0.bottom/0.23.1440.821@0.23.1440.821" timestamp="1599412729485" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1601279207060">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1601279207060" />
+    <state width="1398" height="303" key="GridCell.Tab.0.center/0.23.1440.821@0.23.1440.821" timestamp="1599412729484" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1601279207059">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1601279207059" />
+    <state width="1398" height="303" key="GridCell.Tab.0.left/0.23.1440.821@0.23.1440.821" timestamp="1599412729484" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1601279207061">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1601279207061" />
+    <state width="1398" height="303" key="GridCell.Tab.0.right/0.23.1440.821@0.23.1440.821" timestamp="1599412729485" />
+    <state width="1398" height="303" key="GridCell.Tab.1.bottom" timestamp="1599468845508">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1599468845508" />
+    <state width="1398" height="303" key="GridCell.Tab.1.bottom/0.23.1440.821@0.23.1440.821" timestamp="1599461787465" />
+    <state width="1398" height="303" key="GridCell.Tab.1.center" timestamp="1599468845507">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1599468845507" />
+    <state width="1398" height="303" key="GridCell.Tab.1.center/0.23.1440.821@0.23.1440.821" timestamp="1599461787463" />
+    <state width="1398" height="303" key="GridCell.Tab.1.left" timestamp="1599468845507">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1599468845507" />
+    <state width="1398" height="303" key="GridCell.Tab.1.left/0.23.1440.821@0.23.1440.821" timestamp="1599461787460" />
+    <state width="1398" height="303" key="GridCell.Tab.1.right" timestamp="1599468845508">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1599468845508" />
+    <state width="1398" height="303" key="GridCell.Tab.1.right/0.23.1440.821@0.23.1440.821" timestamp="1599461787464" />
+    <state x="229" y="89" key="SettingsEditor" timestamp="1599339807344">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1599339807344" />
+    <state x="399" y="282" key="com.intellij.ide.util.TipDialog" timestamp="1599340057603">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="399" y="282" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1599340057603" />
+    <state x="386" y="207" width="667" height="486" key="find.popup" timestamp="1597064355719">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="386" y="207" width="667" height="486" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1597064355719" />
+    <state x="114" y="64" key="new project wizard" timestamp="1597426903350">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="114" y="64" key="new project wizard/0.0.1440.900@0.0.1440.900" timestamp="1597426903350" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1599339802645">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1599339802645" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/epam/microservices/shop/rabbitmq/consumer/OrderCreatedEventConsumer.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/epam/microservices/shop/service/impl/CreditCardServiceImpl.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

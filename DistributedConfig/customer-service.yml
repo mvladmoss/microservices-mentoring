@@ -1,0 +1,10 @@
+rabbitmq:
+  default:
+    exchange: orderShopExchange
+  queues:
+    outbound:
+      customerVerifiedQueue:
+        name: customer_verified_queue
+        routing-key: customer_verified_queue
+    inbound:
+      customerVerificationQueue: customer_verification_queue

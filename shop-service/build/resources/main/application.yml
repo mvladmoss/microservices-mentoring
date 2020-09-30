@@ -1,0 +1,10 @@
+server:
+  port: 8082
+
+spring:
+  datasource:
+    url: jdbc:postgresql://shop_service:5433/shop_service
+    username: admin
+    password: No4Nooxip4qu
+
+
